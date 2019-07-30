@@ -1,19 +1,17 @@
 const {init} = require('../../lib/app')
 
 jest.mock('../../lib/kafka', () => ({
-  newKafka: jest.fn(() => ({
-    producer: jest.fn(() => ({
-      connect: jest.fn()
-    }))
-  })),
+  createKafkaProducerConnection: jest.fn(),
   produce: jest.fn()
 }))
+
 const kafka = require('../../lib/kafka')
 
 jest.mock('../../lib/salesforce', () => ({
   login: jest.fn(),
   subscribe: jest.fn()
 }))
+
 const salesforce = require('../../lib/salesforce')
 
 const flushPromises = () => new Promise(setImmediate)

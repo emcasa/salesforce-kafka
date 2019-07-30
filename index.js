@@ -15,5 +15,5 @@ const TOPICS_MAP =
   }
 ]
 
-kafka.ensureKafkaTopicsExists(kafka, TOPICS_MAP).catch((e) => {console.log('error: ', e)})
+kafka.ensureKafkaTopicsExists(TOPICS_MAP).catch((e) => {console.log('error: ', e)})
 app.init(TOPICS_MAP)
