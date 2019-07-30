@@ -7,7 +7,7 @@ describe('kafka tests', () => {
     }
 
     const topics = ['topic1', 'topic2']
-    const result = createTopic(conn, topics)
+    createTopic(conn, topics)
     expect(conn.createTopics.mock.calls[0][0]).toEqual({
       topics: [{topic: 'topic1'}, {topic: 'topic2'}]
     })
