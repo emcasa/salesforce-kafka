@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "A producer to kafka using salesforce streams.",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "jest"
   },
   "dependencies": {
     "dotenv": "^8.0.0",
+    "jest": "^24.8.0",
     "jsforce": "^1.9.2",
     "kafkajs": "^1.9.3"
   },
